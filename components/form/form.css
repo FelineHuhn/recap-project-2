@@ -13,3 +13,8 @@ form {
 .form__button {
   align-self: center;
 }
+
+.form_input_textcounter {
+  text-align: end;
+  font-style: italic;
+}
