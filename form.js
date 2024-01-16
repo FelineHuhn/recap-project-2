@@ -63,3 +63,28 @@ addCardsForm.addEventListener("submit", (event) => {
   newCard.append(question, answerButton, answer, tagList, bookmarkButton);
   tagList.append(tag);
 });
+
+// Formfield text counter
+const questionInput = document.querySelector('[data-js="question"]');
+const answerInput = document.querySelector('[data-js="answer"]');
+const questionInputCounter = document.querySelector(
+  '[data-js="question-counter"]'
+);
+const answerInputCounter = document.querySelector('[data-js="answer-counter"]');
+const maxLength = 150;
+
+// Function that takes two props and uses them to calculate the left characters and interpolate this value into the textContent of the text counter
+function updateCharacterCount(inputField, counterElement) {
+  const charactersLeft = maxLength - inputField.value.length;
+  counterElement.textContent = `${charactersLeft} characters left`;
+}
+
+// Event on question formfield, that calls the updateCharacterCount function on input
+questionInput.addEventListener("input", () => {
+  updateCharacterCount(questionInput, questionInputCounter);
+});
+
+// Event on answer formfield, that calls the updateCharacterCount function on input
+answerInput.addEventListener("input", () => {
+  updateCharacterCount(answerInput, answerInputCounter);
+});
