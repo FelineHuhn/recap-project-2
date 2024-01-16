@@ -13,7 +13,7 @@ const answer = document.querySelector('[data-js="answer"]');
 
 // Solution 1
 
-let isAnswerDisplayed = false;
+/* let isAnswerDisplayed = false;
 
 showAnswerButton.addEventListener("click", () => {
   answer.classList.toggle("card__answer--active");
@@ -22,4 +22,23 @@ showAnswerButton.addEventListener("click", () => {
   showAnswerButton.textContent = isAnswerDisplayed
     ? "Hide answer"
     : "Show answer";
+}); */
+
+// Solution 2
+
+showAnswerButton.addEventListener("click", () => {
+  answer.classList.toggle("card__answer--active");
+
+  // with ternary operator
+  showAnswerButton.textContent.includes("Show answer")
+    ? (showAnswerButton.textContent = "Hide answer")
+    : (showAnswerButton.textContent = "Show answer");
+
+  // or if else statement (instead of ternary operator):
+
+  //   if (showAnswerButton.textContent.includes("Show answer")) {
+  //   showAnswerButton.textContent = "Hide answer";
+  // } else {
+  //   showAnswerButton.textContent = "Show answer";
+  // }
 });
