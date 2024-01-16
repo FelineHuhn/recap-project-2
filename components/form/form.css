@@ -1,0 +1,15 @@
+form {
+  margin: 8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input__container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.form__button {
+  align-self: center;
+}
